@@ -8,4 +8,4 @@ const homeModule = angular.module('home', [
 
 .component('home', homeComponent);
 
-export default homeModule;
+export default homeModule.name;

@@ -21,10 +21,8 @@ angular
         uiRouter,
         ngRedux,
 
-        NavigationComponent.name,
-        HomeComponent.name,
-
-        Api
+        NavigationComponent,
+        HomeComponent
     ])
     .factory('Api', apiProvider)
     .config(($locationProvider, $stateProvider, $urlRouterProvider, $ngReduxProvider) => {
@@ -48,6 +46,6 @@ angular
         $urlRouterProvider.otherwise('/home');
 
 
-        $ngReduxProvider.createStoreWith(RootReducer, [logger, getEurUsdExchange()]);
+        $ngReduxProvider.createStoreWith(RootReducer, [logger, getEurUsdExchange]);
     })
     .component('app', AppComponent);

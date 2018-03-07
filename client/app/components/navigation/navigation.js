@@ -8,4 +8,4 @@ const navigationModule = angular.module('navigation', [
 
 .component('navigation', navigationComponent);
 
-export default navigationModule;
+export default navigationModule.name;
