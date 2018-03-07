@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 import { TodosReducer }  from './todos.reducer';
-import devToolsEnhancer from 'remote-redux-devtools';
+import { TodosSecondListReducer }  from './todosSecondList.reducer';
 
 export const RootReducer = combineReducers({
-    todos: TodosReducer
+    todos: TodosReducer,
+    todos2: TodosSecondListReducer
 });

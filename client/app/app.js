@@ -14,6 +14,9 @@ import logger from 'redux-logger';
 // import our default styles for the whole application
 import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import {TodosReducer} from "./reducers/todos.reducer";
+import {TodosSecondListReducer} from "./reducers/todosSecondList.reducer";
+import {combineReducers} from "redux/index";
 
 angular
     .module('app', [
@@ -44,6 +47,9 @@ angular
         $urlRouterProvider.otherwise('/home');
 
 
-        $ngReduxProvider.createStoreWith(RootReducer, [logger]);
+        $ngReduxProvider.createStoreWith(combineReducers({
+            todos: TodosReducer,
+            todos2: TodosSecondListReducer
+        }), [logger]);
     })
     .component('app', AppComponent);
