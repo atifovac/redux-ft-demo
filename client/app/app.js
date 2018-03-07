@@ -16,7 +16,7 @@ import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import {TodosReducer} from "./reducers/todos.reducer";
 import {TodosSecondListReducer} from "./reducers/todosSecondList.reducer";
-import {combineReducers} from "redux/index";
+import {combineReducers} from "redux";
 
 angular
     .module('app', [
