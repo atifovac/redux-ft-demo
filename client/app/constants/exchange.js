@@ -1,0 +1,4 @@
+export const EXCHANGE = {
+    EUR_USD_EXCHANGE: 'EUR_USD_EXCHANGE',
+    RESET: 'RESET'
+};

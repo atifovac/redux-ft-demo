@@ -1,4 +1,5 @@
 import TodoActions from '../../actions/todo.actions';
+import {getEurUsdExchange} from "../../middleware";
 
 class HomeController {
   constructor($ngRedux) {
@@ -12,13 +13,20 @@ class HomeController {
     this.todo = '';
   }
 
+  getExchange() {
+    debugger;
+    // only for debug purpose
+    getEurUsdExchange()
+  }
+
   $onDestroy(){
     this.unsubscribe();
   }
 
   mapStateToThis(state) {
       return {
-          todos: state.todos
+          todos: state.todos,
+          exchange: state.exchange
       };
   }
 }

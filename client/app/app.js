@@ -8,12 +8,13 @@ import NavigationComponent  from './components/navigation/navigation';
 import HomeComponent        from './containers/home/home';
 
 import { RootReducer } from './reducers';
-
 import logger from 'redux-logger';
 
 // import our default styles for the whole application
 import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import {Api, apiProvider} from "./service/exchangeService";
+import {getEurUsdExchange} from "./middleware";
 
 angular
     .module('app', [
@@ -21,8 +22,11 @@ angular
         ngRedux,
 
         NavigationComponent.name,
-        HomeComponent.name
+        HomeComponent.name,
+
+        Api
     ])
+    .factory('Api', apiProvider)
     .config(($locationProvider, $stateProvider, $urlRouterProvider, $ngReduxProvider) => {
         "ngInject";
 
@@ -44,6 +48,6 @@ angular
         $urlRouterProvider.otherwise('/home');
 
 
-        $ngReduxProvider.createStoreWith(RootReducer, [logger]);
+        $ngReduxProvider.createStoreWith(RootReducer, [logger, getEurUsdExchange()]);
     })
     .component('app', AppComponent);
