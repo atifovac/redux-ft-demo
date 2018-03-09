@@ -1,6 +1,11 @@
-# Component based angular 1.5 app example
+# Demo sull'utilizzo di redux con AngularJS
 
-A demo for my blog post at: http://blog.grossman.io/
+Per poter eseguire la demo
 
+```
+    npm install
+    npm install -g gulp
+    gulp
+```
 
-Based on the https://github.com/angularclass/NG6-starter.git starter boilerplate.
+Basato su https://github.com/angularclass/NG6-starter.git.
